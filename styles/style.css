@@ -49,3 +49,372 @@ ol {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
 }
+
+/*______________________________________________________________________________________*/
+/*_____________________________________________________________________________________ */
+
+/* Выполнение задания начинается отсюда */
+
+/*______________________________________________________________________________________*/
+/*______________________________________________________________________________________*/
+
+/*______________________________________________________________________________________*/
+/*_____________________________________________________________________________________ */
+
+/* Шаг 1 лейаут */
+
+/*______________________________________________________________________________________*/
+/*______________________________________________________________________________________*/
+
+.page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* padding: 133px 30px; */
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 1140px;
+  gap: 30px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.content__list-container {
+  display: flex;
+  flex-direction: column;
+  /* height: 534px; */
+  overflow-x: hidden;
+  overflow-y: scroll;
+  gap: 30px;
+}
+
+.content__details{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* height: 534px; */
+  gap: 26px;
+}
+
+/*______________________________________________________________________________________*/
+/*_____________________________________________________________________________________ */
+
+/* Шаг 2 уточнение размеров */
+
+/*______________________________________________________________________________________*/
+/*______________________________________________________________________________________*/
+
+.result__video-container {
+  width: 711px;
+  height: 386px;
+  margin-bottom: 16px;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+/*______________________________________________________________________________________*/
+/*_____________________________________________________________________________________ */
+
+/* Шаг 3 Стиши текстов */
+
+/*______________________________________________________________________________________*/
+/*______________________________________________________________________________________*/
+
+.search-form__fieldset-title {
+  font-family: Fira Sans Condensed, sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+}
+
+.title {
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 75px;
+  line-height: 94%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+}
+
+.content__accent {
+  opacity: .3;
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+.content__video-card-title {
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.content__video-card-description {
+  font-family: Fira Sans Condensed, sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 16.2px;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 1);
+  line-clamp: inherit;
+}
+
+/*______________________________________________________________________________________*/
+/*_____________________________________________________________________________________ */
+
+/* Шаг 4 Формы и их состояния */
+
+/*______________________________________________________________________________________*/
+/*______________________________________________________________________________________*/
+
+/*_____________________________________________________________________________________ */
+
+/* Стилизуем обёртки для поискового инпута и чекбоксов */
+
+/*______________________________________________________________________________________*/
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  gap: 1.5px;
+}
+
+/*_____________________________________________________________________________________ */
+
+/* Стилизуем текстовое поле ввода */
+
+/*______________________________________________________________________________________*/
+
+.search-form__textfield {
+  border-left: none;
+  border-right: none;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+  color: #fff;
+  background-color: rgb(26, 24, 24);
+  appearance: none;
+  cursor: pointer;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: solid 1px white;
+}
+
+/*_____________________________________________________________________________________ */
+
+/* Стилизуем чекбокс */
+
+/*______________________________________________________________________________________*/
+
+.search-form__pseudo-checkbox {
+  width: 19px;
+  height: 19px;
+  border: solid 1px white;
+  padding: 1px;
+  cursor: pointer;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: '';
+  display: block;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.search-form__checkbox:checked {
+  opacity: 1;
+}
+
+.search-form__label:hover {
+  text-decoration: underline;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: solid 1px white;
+}
+
+/*______________________________________________________________________________________*/
+/*_____________________________________________________________________________________ */
+
+/* Шаг 5 Стилизуем кнопки и их состояния */
+
+/*______________________________________________________________________________________*/
+/*______________________________________________________________________________________*/
+
+.button {
+  font-family: Fira Sans Condensed, sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: white;
+  border: solid 1px white;
+  background-color: rgb(26, 24, 24, 0);
+  cursor: pointer;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+  align-self: flex-end;
+}
+
+.more-button {
+  width: 100%;
+  height: 34px;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: rgba(84, 80, 80, 1);
+  border: solid 1px rgba(255, 255, 255, 1);
+}
+
+button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid white;
+}
+
+/*______________________________________________________________________________________*/
+/*_____________________________________________________________________________________ */
+
+/* Шаг 6. Состояния карточек */
+
+/*______________________________________________________________________________________*/
+/*______________________________________________________________________________________*/
+
+.content__card-link {
+  display: block;
+  cursor: pointer;
+}
+
+.content__card-link_current {
+  background-color: rgba(84, 80, 80, 1);
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: solid 1px white;
+}
+
+.content__list-item {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+/*______________________________________________________________________________________*/
+/*_____________________________________________________________________________________ */
+
+/* Шаг 8. Позиционирование прелоадеров */
+
+/*______________________________________________________________________________________*/
+/*______________________________________________________________________________________*/
+
+.result__video-container {
+  position: relative;
+}
+
+.content__list-container {
+  position: relative;
+  height: 298px;
+}
