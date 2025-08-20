@@ -84,10 +84,13 @@ ol {
 }
 
 .search-form {
+  width: 711px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  border-spacing: 40px;
+  /* gap: 90px; */
 }
 
 .content__list-container {
@@ -105,6 +108,7 @@ ol {
   width: 100%;
   /* height: 534px; */
   gap: 26px;
+  padding-top: 30px;
 }
 
 /*______________________________________________________________________________________*/
@@ -118,7 +122,7 @@ ol {
 .result__video-container {
   width: 711px;
   height: 386px;
-  margin-bottom: 16px;
+  margin-bottom: 25px;
 }
 
 .result__video {
@@ -167,6 +171,7 @@ ol {
   line-height: 100%;
   letter-spacing: 0%;
   color: rgba(255, 255, 255, 1);
+  padding-bottom: 6px;
 }
 
 .title {
@@ -211,6 +216,7 @@ ol {
   letter-spacing: 0%;
   color: rgba(255, 255, 255, 1);
   line-clamp: inherit;
+  padding-top: 4px;
 }
 
 /*______________________________________________________________________________________*/
@@ -241,11 +247,17 @@ ol {
   display: flex;
   flex-direction: row;
   gap: 15px;
+  /* margin-left: 5px; */
 }
 
 .search-form__fieldset {
   flex-direction: column;
   border: none;
+  min-width: 225px;
+}
+
+.search-form__fieldset:nth-child(2) {
+  padding-left: 6.5px;
 }
 
 .search-form__label {
@@ -254,6 +266,7 @@ ol {
   align-items: center;
   width: fit-content;
   gap: 1.5px;
+  /* padding-left: 5px; */
 }
 
 /*_____________________________________________________________________________________ */
@@ -263,13 +276,17 @@ ol {
 /*______________________________________________________________________________________*/
 
 .search-form__textfield {
+  font-family: inherit;
+  font-size: inherit;
+  width: inherit;
   border-left: none;
   border-right: none;
   border-top: solid 1px white;
   border-bottom: solid 1px white;
   color: #fff;
-  background-color: rgb(26, 24, 24);
+  background-color: transparent;
   appearance: none;
+  margin-bottom: 4px;
   cursor: pointer;
 }
 
@@ -303,6 +320,7 @@ ol {
   border: solid 1px white;
   padding: 1px;
   cursor: pointer;
+  margin-right: 4px;
 }
 
 .search-form__pseudo-checkbox::after {
@@ -352,6 +370,8 @@ ol {
   width: 194px;
   height: 34px;
   align-self: flex-end;
+  justify-self: flex-end;
+  margin-bottom: 3px;
 }
 
 .more-button {
