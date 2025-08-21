@@ -16,6 +16,10 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -66,13 +70,6 @@ ol {
 /*______________________________________________________________________________________*/
 /*______________________________________________________________________________________*/
 
-.page {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
 .content {
   display: flex;
   flex-direction: row;
@@ -93,14 +90,15 @@ ol {
 }
 
 .content__list-container {
+  position: relative;
+  height: 298px;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: auto;
   gap: 30px;
 }
 
-.content__details{
+.content__details {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -119,6 +117,7 @@ ol {
 /*______________________________________________________________________________________*/
 
 .result__video-container {
+  position: relative;
   width: 711px;
   height: 386px;
   margin-bottom: 24px;
@@ -148,10 +147,12 @@ ol {
   height: 103px;
   object-fit: cover;
   object-position: center;
+  flex-shrink: 0;
 }
 
 .content__video-card-description-container {
   flex-grow: 1;
+  max-width: 196px;
 }
 
 /*______________________________________________________________________________________*/
@@ -163,12 +164,12 @@ ol {
 /*______________________________________________________________________________________*/
 
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed, sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
-  font-style: Regular;
+  /* font-style: Regular; */
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: 0%;
+  /* letter-spacing: 0%; */
   color: rgba(255, 255, 255, 1);
   padding-bottom: 6px;
 }
@@ -176,10 +177,10 @@ ol {
 .title {
   font-family: Oswald, sans-serif;
   font-weight: 700;
-  font-style: Bold;
+  /* font-style: Bold; */
   font-size: 75px;
   line-height: 94%;
-  letter-spacing: 0%;
+  /* letter-spacing: 0%; */
   text-transform: uppercase;
   color: rgba(255, 255, 255, 1);
 }
@@ -188,31 +189,28 @@ ol {
   opacity: .3;
 }
 
-.content__card-link {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 1);
-}
-
 .content__video-card-title {
   font-family: Oswald, sans-serif;
-  font-weight: 700;
-  font-style: Bold;
+  font-weight: bold;
+  /* font-style: Bold; */
+  /* font-style: bold; */
   font-size: 30px;
   line-height: 100%;
-  letter-spacing: 0%;
+  /* letter-spacing: 0%; */
   text-transform: uppercase;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 196px;
 }
 
 .content__video-card-description {
-  font-family: Fira Sans Condensed, sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
-  font-style: Regular;
+  /* font-style: Regular; */
   font-size: 18px;
   line-height: 16.2px;
-  letter-spacing: 0%;
+  /* letter-spacing: 0%; */
   color: rgba(255, 255, 255, 1);
   line-clamp: inherit;
   padding-top: 4px;
@@ -237,7 +235,7 @@ ol {
   inline-size: 1px;
   block-size: 1px;
   overflow: hidden;
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
   white-space: nowrap;
 }
@@ -252,6 +250,7 @@ ol {
   flex-direction: column;
   border: none;
   min-width: 225px;
+  cursor: pointer;
 }
 
 .search-form__fieldset:nth-child(2) {
@@ -288,14 +287,7 @@ ol {
 }
 
 .search-form__textfield::placeholder {
-  font-family: Fira Sans Condensed, sans-serif;
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 0%;
   color: rgb(255 255 255 / 0.7);
-  word-wrap: nowrap;
 }
 
 .search-form__textfield:focus {
@@ -304,6 +296,7 @@ ol {
 
 .search-form__textfield:focus-visible {
   outline: solid 1px white;
+  outline-offset: 1px;
 }
 
 /*_____________________________________________________________________________________ */
@@ -334,11 +327,11 @@ ol {
   opacity: 1;
 }
 
-.search-form__label:hover {
+.search-form__label:hover .search-form__label-text{
   text-decoration: underline;
 }
 
-.search-form__label:has(:focus-visible) {
+.search-form__label:has(:focus-visible) .search-form__label-text{
   outline: solid 1px white;
 }
 
@@ -351,22 +344,23 @@ ol {
 /*______________________________________________________________________________________*/
 
 .button {
-  font-family: Fira Sans Condensed, sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 700;
-  font-style: Bold;
+  /* font-style: Bold; */
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: 0%;
+  /* letter-spacing: 0%; */
   text-align: center;
   color: white;
   border: solid 1px white;
   background-color: rgb(26, 24, 24, 0);
   cursor: pointer;
+  min-height: 34px;
 }
 
 .search-form__submit-button {
-  width: 194px;
-  height: 34px;
+  min-width: 194px;
+  /* min-height: 34px; */
   align-self: flex-end;
   justify-self: flex-end;
   margin-bottom: 3px;
@@ -374,7 +368,8 @@ ol {
 
 .more-button {
   width: 100%;
-  height: 34px;
+  /* min-height: 34px; */
+  margin-bottom: 2px;
 }
 
 .button:hover {
@@ -383,15 +378,16 @@ ol {
 
 .button:active {
   background-color: rgba(84, 80, 80, 1);
-  border: solid 1px rgba(255, 255, 255, 1);
+  /* border: solid 1px rgba(255, 255, 255, 1); */
 }
 
-button:focus {
+.button:focus {
   outline: none;
 }
 
 .button:focus-visible {
-  outline: 1px solid white;
+  outline: solid 1px white;
+  outline-offset: 1px;
 }
 
 /*______________________________________________________________________________________*/
@@ -405,9 +401,12 @@ button:focus {
 .content__card-link {
   display: block;
   cursor: pointer;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
 }
 
-.content__card-link_current {
+.content__card-link_current,
+.content__card-link:active {
   background-color: rgba(84, 80, 80, 1);
 }
 
@@ -427,23 +426,3 @@ button:focus {
   padding-left: 3px;
   padding-right: 3px;
 }
-
-/*______________________________________________________________________________________*/
-/*_____________________________________________________________________________________ */
-
-/* Шаг 8. Позиционирование прелоадеров */
-
-/*______________________________________________________________________________________*/
-/*______________________________________________________________________________________*/
-
-.result__video-container {
-  position: relative;
-}
-
-.content__list-container {
-  position: relative;
-  height: 298px;
-}
-
-
-
